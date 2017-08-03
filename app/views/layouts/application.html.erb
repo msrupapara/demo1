@@ -6,12 +6,42 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "http://code.jquery.com/jquery-3.2.1.min.js" %>
+    
   </head>
 
   <body>
 
-  	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-    <%= yield %>
+      <!-- Renders navigation file located at app/views/layouts/_navigation.html.erb -->
+      <%= render "layouts/navigation" %>
+
+      <center>
+        <% unless flash.blank? %>
+          <div class='col-sm-12'>
+            <div id="flash">
+              <% flash.each do |key, value| %>
+                <div class='flash alert alert-dismissible fade-in alert-<%= key == 'notice' ? 'info' : 'danger' %>'><%= value %></div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </center>
+      <br/><br/>
+
+
+          <div class="container-fluid">
+            <%= yield %>
+          </div>  
+
   </body>
 </html>
+
+<script type="text/javascript">
+window.setTimeout(function() 
+ {
+$(".flash").fadeTo(500, 0).slideUp(500, function()
+{
+$(this).remove();
+});
+}, 3000);
+</script>
