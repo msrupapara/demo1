@@ -4,6 +4,8 @@ class Photo < ApplicationRecord
 
   #This validates the type of file uploaded. According to this, only images are allowed.
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  #validates_attachment_content_type :video, content_type: /.*/
+
 
   #Use this if you do not want to validate the uploaded file type.
   #do_not_validate_attachment_file_type :image
