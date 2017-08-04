@@ -78,21 +78,4 @@ class User < ApplicationRecord
     super && provider.blank?
   end
 
-
- 
 end
-
-
-  # def self.before_save 
-   #	if auth.provider == "twitter"
-   	#	user.email = auth.extra.raw_info.name@twitter.com
-   	#end
-  # end
-
-  #before_create :set_dummy_mail, if self.provider == "twitter"
-
-  #private
-
- # def set_dummy_mail
-  #  self.email = "#{self.name}_email@example.com"
-  #end
