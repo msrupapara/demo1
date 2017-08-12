@@ -1,32 +1,28 @@
-<div class="page-header"><h2>Upload Photo</h2></div>
 
 <%= form_for @photo, html: { multipart: true } do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= "#{pluralize(@photo.errors.count, "error")} prohibited this photo from being saved:" %>
-      </h2>
-      <ul>
-        <% @photo.errors.full_messages.each do |msg| %>
-          <li>
-            <%= msg %>
-          </li>
+  <div class="border-form-div">
+    <h2 class="form-signin-heading">Upload Photo</h2>
+    <% if @photo.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= "#{pluralize(@photo.errors.count, "error")} prohibited this photo from being saved:" %>
+        </h2>
+        <ul>
+          <% @photo.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
           <% end %>
-      </ul>
-    </div>
-  <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <%= f.text_field :title, :placeholder => 'Title' %>
+  
+    <%= f.file_field :image, :placeholder => 'Image' %><br/>
+  
+    <%= f.submit 'Upload Photo', class: 'btn btn-success' %>
 
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
+  </div>    
+ <% end %> 
 
-  <div class="form-group">
-        <%= f.submit 'Upload Photo', class: 'btn btn-primary' %>
-    </div>
-<% end %> 

@@ -7,14 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "http://code.jquery.com/jquery-3.2.1.min.js" %>
+    <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" %>
     
   </head>
 
   <body>
 
-      <!-- Renders navigation file located at app/views/layouts/_navigation.html.erb -->
-      <%= render "layouts/navigation" %>
-
+    <!-- Renders navigation file located at app/views/layouts/_navigation.html.erb -->
+    <%= render "layouts/navigation" %>
       <center>
         <% unless flash.blank? %>
           <div class='col-sm-12'>
@@ -26,12 +26,12 @@
           </div>
         <% end %>
       </center>
+      
       <br/><br/>
 
-
-          <div class="container-fluid">
-            <%= yield %>
-          </div>  
+      <div class="container-fluid">
+        <%= yield %>
+      </div>  
 
   </body>
 </html>
@@ -45,3 +45,5 @@ $(this).remove();
 });
 }, 3000);
 </script>
+
+

@@ -1,37 +1,87 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-static-top"> 
+    <div class="container-fluid"> 
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+    <div class="navbar-header"> 
+      <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Demo1", root_path, :class => 'navbar-brand' %>
+      <%= link_to "Demo1", root_path, :class => 'navbar-brand' %> 
       <!--a class="navbar-brand" href="#">ImageUploader</a>-->
     </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
+                  
           <% if user_signed_in? %>
-          
-            <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'Photos', photos_path %></li>
-            <li><%= link_to 'Upload New Image', new_photo_path %></li>
+            <ul class="nav navbar-nav">  
+              <%#= link_to 'Home', root_path %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                  <span class="glyphicon glyphicon-picture"></span> Photos <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/photos">
+                    <span class="glyphicon glyphicon-th-large"></span> View All
+                    </a>
+                  </li>
+                  <li><a href="/photos/new">
+                    <span class="glyphicon glyphicon-upload"></span> Upload New Image
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <%#= link_to 'Photos', photos_path %>
+              <!--li><%#= link_to 'Upload New Image', new_photo_path %></li>-->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                  <span class="glyphicon glyphicon-film"></span> Videos <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/videos">
+                    <span class="glyphicon glyphicon-th-large"></span> View All
+                    </a>
+                  </li>
+                  <li><a href="/videos/new">
+                    <span class="glyphicon glyphicon-upload"></span> Upload New Video
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/users/edit">
+                <span class="glyphicon glyphicon-cog"></span> Edit Profile
+                </a>
+              </li>
+              <li><a rel="nofollow" data-method="delete" href="/users/sign_out">
+                <span class="glyphicon glyphicon-off"></span> Sign out
+                </a>
+              </li>
+            </ul>
 
-            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <%#= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
   
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <%#= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 
           <% else %>
-
-            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>  
-            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="/users/sign_in">
+                  <span class="glyphicon glyphicon-user"></span> Login
+                </a>
+              </li>
+              <li>
+                <a href="/users/sign_up">
+                  <span class="glyphicon glyphicon-log-in"></span> Sign Up
+                </a>
+              </li>
+              <%#= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>   
+              
+              <%#= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            </ul>
           <% end %>
-        
-        </ul>
+                
     </div>
   </div>
 </nav>

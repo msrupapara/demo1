@@ -1,0 +1,40 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+  <div class="border-form-div">
+    <h2 class="form-signin-heading">Log in</h2>    
+   
+      <%= f.email_field :email, autofocus: true, :placeholder => "Email" %>
+      <%= f.password_field :password, :placeholder => 'Password' %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="checkbox">
+          <span>
+            <label><%= f.check_box :remember_me %> Remember me</label>
+          </span>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name),:class => 'forgot' %>
+          <% end %>
+          <div class="clear"></div>
+        </div>
+      <% end -%>
+
+      <%= f.submit "Log in", class: 'btn btn-success btn-block', style: "font-size: 1.6rem"  %>
+      <div class="social">
+        <span> or sign in with social media </span>
+      </div>
+
+    <% end %>
+
+    <%= render "devise/shared/links" %><br/>
+
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <div class="already">Don't have an account?
+        <%= link_to "Sign up", new_registration_path(resource_name), style:"color:#66b3ff" %><br />
+      </div>
+    <% end -%>
+
+    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <div class="already">
+        <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), style:"color:#66b3ff" %>
+      </div>
+    <% end -%>
+</div>

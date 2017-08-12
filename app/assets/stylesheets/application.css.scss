@@ -1,0 +1,249 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-social';
+@import 'font-awesome';
+
+body {
+    font:'Open Sans', Arial, Sans-serif;
+    font-size: 16px;
+      
+    font-smoothing: antialiased;
+    font-weight: 600;
+    
+    color: #FFFFFF;
+    background: url('bg.jpg') no-repeat center center fixed;;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 3em auto;
+}
+
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+
+.item {
+    display: inline-block;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+.photoitem {
+    display: inline-block;
+    background: #101010;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}
+
+.home {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 740px;
+  text-align: center;
+  background-color: rgba(10,10,10,0.5);
+  margin: auto auto;
+  padding: 40px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0 1opx black;
+     -moz-box-shadow: 0 0 1opx black;
+          box-shadow: 0 0 1opx black;
+}
+
+.whitetext {
+  color: white !important;
+}
+
+.video {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 640px;
+  background-color: rgba(10,10,10,0.5);
+  margin: auto auto;
+  padding: 40px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0 1opx black;
+     -moz-box-shadow: 0 0 1opx black;
+          box-shadow: 0 0 1opx black;
+}
+
+.border-form-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 540px;
+  background-color: rgba(10,10,10,0.5);
+  margin: auto auto;
+  padding: 40px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0 1opx black;
+     -moz-box-shadow: 0 0 1opx black;
+          box-shadow: 0 0 1opx black;
+}
+.border-form-div .form-signin-heading{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+  
+}
+.border-form-div .checkbox span{
+  float: left;
+}
+.border-form-div .checkbox .forgot{
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+}
+.border-form-div .checkbox .clear{
+  clear: both;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 16px;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.border-form-div input[type="textarea"]{
+  width: 100%;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 16px;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.border-form-div .social {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 10px;
+}
+.border-form-div .social span {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0 20px;
+}
+.border-form-div .social span:before, .border-form-div .social span:after {
+  content: '';
+  display: block;
+  width: 500px;
+  position: absolute;
+  top: 0.9em;
+  border-top: 1px solid White;
+}
+.border-form-div .social span:before {
+  right: 75%;
+}
+.border-form-div .social span:after {
+  left: 75%;
+}
+
+
+
+.border-form-div .buttons {
+  width: 100%;
+  margin: 20px 0px;
+}
+.border-form-div .buttons .btn {
+  float: left;
+  width: 95%;
+  margin: 0px 1.5%;
+  display: inline-flex;
+}
+.border-form-div .buttons .btn span {
+  padding-right: 11px;
+  padding-left: 25px;
+}
+
+.border-form-div .already {
+  text-align: center;
+  font-size: 1.6rem;
+}

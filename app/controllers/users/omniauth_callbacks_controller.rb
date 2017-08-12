@@ -27,16 +27,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
 
   def all
-    p 111111111
     user = User.from_omniauth(request.env["omniauth.auth"])
-    p 222222222222
     if user.persisted?
-      p 3333333333333333
       session[:user_id] = user.id
       sign_in_and_redirect user, notice: "Signed in!"
     else
-
-      p 44444444444444
       # Devise allow us to save the attributes eventhough
       # we havent create the user account yet
       session["devise.user_attributes"] = user.attributes

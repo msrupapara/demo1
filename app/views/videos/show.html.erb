@@ -1,0 +1,23 @@
+
+<p id="notice"><%= notice %></p>
+<div class="border-form-div">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @video.title %>
+	</p>
+
+	<p>
+	  <strong>Description:</strong>
+	  <%= @video.description %>
+	</p>
+
+	<p>
+	  <strong>Video:</strong>
+	  <%= video_tag @video.attachment.url,
+	    controls: true, style: "max-width: 100%;" %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_video_path(@video), style:"color:#fff" %> |
+	<%= link_to 'Back', videos_path, style:"color:#fff" %>
+</div>
